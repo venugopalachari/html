@@ -530,24 +530,7 @@ alert("Welcome to the javaTpoint.com");
 	  	
 function SubForm(){
 alert("hello");
-    $.ajax({
-	
-			  fetch("https://api.apispreadsheets.com/data/20686/", {
-			method: "POST",
-			body: JSON.stringify({"data": [{"name":"venu","phone":"7396917874","email":"venu@gmail.com","weburl":"venu.com"}]}),
-		}).then(res =>{
-			if (res.status === 201){
-				// SUCCESS
-			}
-			else{
-				// ERROR
-			}
-		})
-	
-	
-		
-		
-    });
+ 
 }
 	
 });
