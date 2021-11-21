@@ -371,7 +371,7 @@ https://templatemo.com/tm-565-onix-digital
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact"  >
+          <form id="contactform"  >
             <div class="row">
               <div class="col-lg-12">
                 <fieldset>
@@ -397,14 +397,13 @@ https://templatemo.com/tm-565-onix-digital
 			 
 		    <div class="col-lg-12">
                 <fieldset>
-                  <button  type="submit" id="form-submit" class="main-button"  onclick="myFunction()">Submit Request</button>
+                  <button  type="submit" id="form-submit" class="main-button"  >Submit Request</button>
                 </fieldset>
               </div>
 			  
             </div>
           </form>
-		  <button onclick="myFunction()">Click me</button>
-		  <p id="demo"></p>
+		 
 
 <script>
 function myFunction() {
@@ -529,19 +528,45 @@ function myFunction() {
   
   <script>
   
-  $(document).ready(function(){
+
      
 	  
-	  function fun() {  
-alert("Welcome to the javaTpoint.com");  
-}  
-	  	
-function SubForm(){
-alert("hello");
- 
-}
-	
+$(document).ready(function(){
+    $("#contactform").on('submit', function(){
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var website = $("#website").val();
+
+       
+        
+		
+		fetch("https://api.apispreadsheets.com/data/20686/", {
+			method: "POST",
+			body: JSON.stringify({"data": [{"name":name,"phone":phone,"email":email,"weburl":website}]}),
+		}).then(res =>{
+			if (res.status === 201){
+				// SUCCESS
+			}
+			else{
+				// ERROR
+			}
+			
+			}
+			
+		
+                })
+		
+		
+		   
+		   
+		   
+        }
+        return false;
+    });
 });
+	
+
   </script>
   
   
