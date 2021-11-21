@@ -517,11 +517,16 @@ https://templatemo.com/tm-565-onix-digital
 		 
 		 formsubmit.addEventListener('click', function(e) {
          e.preventDefault();
+		 // getting the value
+       var name = $("#name").val();	
+       var phone = $("#phone").val();
+       var email = $("#email").val();
+       var website = $("#website").val();
 		 alert("heelo");
     // do cool stuff
 	fetch("https://api.apispreadsheets.com/data/20686/", {
 	method: "POST",
-	body: JSON.stringify({"data": [{"name":"venu","phone":"7396917874","email":"venu@gmail.com","weburl":"venu.com"}]}),
+	body: JSON.stringify({"data": [{"name":name,"phone":phone,"email":email,"weburl":website}]}),
 }).then(res =>{
 alert(res.status);
 	if (res.status === 201){
