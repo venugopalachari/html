@@ -403,13 +403,6 @@ https://templatemo.com/tm-565-onix-digital
 			  
             </div>
           </form>
-		 
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
-}
-</script>
 		  
         </div>
       </div>
@@ -532,31 +525,30 @@ function myFunction() {
      
 	  
 $(document).ready(function(){
-    $("#contactform").on('submit', function(){
+    $("#contact").on('submit', function(e){
+	    e.preventDefault();
+		alert("hello");
         var name = $("#name").val();
         var email = $("#email").val();
         var phone = $("#phone").val();
         var website = $("#website").val();
-
-       
-        
+		
+		
 		
 		fetch("https://api.apispreadsheets.com/data/20686/", {
-			method: "POST",
-			body: JSON.stringify({"data": [{"name":name,"phone":phone,"email":email,"weburl":website}]}),
-		}).then(res =>{
-			if (res.status === 201){
-				// SUCCESS
-			}
-			else{
-				// ERROR
-			}
-			
-			}
-			
-		
-                })
-		
+	method: "POST",
+	body: JSON.stringify({"data": [{"name":"","phone":"","email":"","weburl":""}]}),
+}).then(res =>{
+	if (res.status === 201){
+		// SUCCESS
+	}
+	else{
+		// ERROR
+	}
+})
+
+       
+      
 		
 		   
 		   
