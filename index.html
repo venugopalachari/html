@@ -538,23 +538,17 @@ $(document).ready(function(){
 		fetch("https://api.apispreadsheets.com/data/20686/", {
 	method: "POST",
 	body: JSON.stringify({"data": [{"name":"","phone":"","email":"","weburl":""}]}),
-}).then(res =>{
-	if (res.status === 201){
-		// SUCCESS
-	}
-	else{
-		// ERROR
-	}
-})
-
-       
-      
-		
-		   
-		   
-		   
+		}).then(res =>{
+			if (res.status === 201){
+				// SUCCESS
+			}
+			else{
+				// ERROR
+			}
+		});
+			   
         }
-        return false;
+   
     });
 });
 	
