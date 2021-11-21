@@ -393,13 +393,15 @@ https://templatemo.com/tm-565-onix-digital
                   <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
                 </fieldset>
               </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-button" onclick="SubForm()" >Submit Request</button>
-                </fieldset>
-              </div>
+             
             </div>
           </form>
+		  
+		   <div class="col-lg-12">
+                <fieldset>
+                  <button  id="form-submit" class="main-button" onclick="SubForm();" >Submit Request</button>
+                </fieldset>
+              </div>
         </div>
       </div>
     </div>
@@ -482,6 +484,10 @@ https://templatemo.com/tm-565-onix-digital
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
   <script>
   // Acc
@@ -503,31 +509,42 @@ https://templatemo.com/tm-565-onix-digital
     });
 	
 	
-	function SubForm (){
-	alert("hello");
+	
+function SubForm(){
+alert("hello");
     $.ajax({
-				  fetch("https://api.apispreadsheets.com/data/20686/", {
-				method: "POST",
-				body: JSON.stringify({"data": {"name":document.getElementById("name").value ,"phone":document.getElementById("name").value,"email":document.getElementById("email").value,"weburl":document.getElementById("weburl").value}}),
-			}).then(res =>{
-				if (res.status === 201){
-					// SUCCESS
-				}
-				else{
-					// ERROR
-				}
-			})
+	
+			  fetch("https://api.apispreadsheets.com/data/20686/", {
+			method: "POST",
+			body: JSON.stringify({"data": [{"name":"venu","phone":"7396917874","email":"venu@gmail.com","weburl":"venu.com"}]}),
+		}).then(res =>{
+			if (res.status === 201){
+				// SUCCESS
+			}
+			else{
+				// ERROR
+			}
+		})
+	
+	
+		
+		
     });
 }
 	
 	
-	
+	alert("hello");
 	
 	
   </script>
   
   
+  <script>
   
+  $(document).ready(function(){
+      alert("Hello World");
+});
+  </script>
   
   
   
