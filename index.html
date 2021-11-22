@@ -482,6 +482,7 @@ https://templatemo.com/tm-565-onix-digital
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
   <script>
@@ -527,8 +528,11 @@ https://templatemo.com/tm-565-onix-digital
               
 					if (res.status === 201){
 						// SUCCESS
-						alert("Thanks for contacting us");
-						 document.getElementById("contact").reset();
+						//alert("Thanks for contacting us");
+						swal("Thanks for contacting us", "Will Revert back immediately !", "success");
+						 document.getElementById("name").reset();
+						 document.getElementById("phone").reset();
+						 document.getElementById("emailid").reset();
 					}
 					else{
 						// ERROR
