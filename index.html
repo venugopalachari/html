@@ -522,7 +522,7 @@ https://templatemo.com/tm-565-onix-digital
 					// do cool stuff
 					fetch("https://api.apispreadsheets.com/data/20686/", {
 					method: "POST",
-					body: JSON.stringify({"data": [{"name":name,"phone":phone,"email":email,"weburl":website}]}),
+					body: JSON.stringify({"data": [{"Name":name,"Phone":phone,"Email":email}]}),
 				}).then(res =>{
               alert(res.status);
 					if (res.status === 201){
